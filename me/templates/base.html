@@ -1,0 +1,192 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>JayForCode</title>
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+  <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/all.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/emojis.css' %}" />
+  <link rel="stylesheet" href="{% static 'css.modal.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/svgbg.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/bg.css' %}" />
+</head>
+
+<body class="bg overflow-x-hidden">
+
+  {% include 'includes/header.html'%}
+
+
+  <main class="space-y-16 mb-2">
+    <div class="relative">
+      <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-20">
+        <div class="blur-[106px] h-56 bg-gradient-to-br to-purple-400 from-blue-700"></div>
+        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-indigo-600"></div>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+        <div class="relative pt-24 md:pt-36 ml-auto">
+          <div class="lg:w-2/3 text-center mx-auto">
+            <h1 class="text-white font-bold text-4xl md:text-6xl xl:text-7xl">Shaping a world with
+              <span class="text-white">Reimagination.</span>
+            </h1>
+            <p class="mt-8 text-gray-300">The computer is incredibly fast, accurate, and stupid. Man
+              is incredibly slow, inaccurate, and brilliant. The marriage of the two is a force beyond calculation</p>
+            <div class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
+              <a href="https://www.paypal.com/paypalme/my/settings?flow=cmV0dXJuVXJsPWh0dHBzOi8vd3d3LnBheXBhbC5jb20vbXlhY2NvdW50L3RyYW5zZmVyL2hvbWVwYWdlL3JlcXVlc3QmY2FuY2VsVXJsPWh0dHBzOi8vd3d3LnBheXBhbC5jb20vbXlhY2NvdW50L3RyYW5zZmVyL2hvbWVwYWdlL3JlcXVlc3Q="
+                 target="_blank"
+                 class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-gray-700 border-2 border-primary rounded-3xl before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
+                <span class="relative text-base font-semibold text-white">
+                  <i class="fa-solid fa-mug-saucer"></i> 1 coffee
+                </span>
+              </a>
+              <a href="{% static 'files/Resume.pdf' %}" target="_blank"
+                 class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-primary/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 before:border-gray-700 before:bg-gray-800 sm:w-max">
+
+                <span class="relative text-base font-semibold text-white">
+                  <i class="fa-solid fa-note-sticky"></i> Resume
+                </span>
+              </a>
+            </div>
+            <div class="flex py-4 mt-8 border-y border-gray-800 justify-evenly">
+              <div class="text-center">
+                <h6 id="like-button" onclick="delayedReload()" class="text-lg font-semibold text-white cursor-pointer">
+                  <i class="fa-solid fa-thumbs-up"></i>
+                  Likes
+                </h6>
+                <p class="mt-2 text-white">{{ num_likes }}</p>
+              </div>
+              <div class="text-center">
+                <h6 class="text-lg font-semibold text-white"><i class="fa-solid fa-eye"></i> Views</h6>
+                <p class="mt-2 text-white ">{{count_visitor}}</p>
+              </div>
+              <div class="text-center">
+                <h6 class="text-lg font-semibold text-white"><i class="fa-solid fa-star"></i> Rate</h6>
+                <p class="mt-2 text-white ">0 Star</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div>
+      <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+        <div
+             class="space-y-6 justify-between text-gray-600 md:flex flex-row-reverse md:gap-6 md:space-y-0 lg:gap-12 lg:items-center">
+          <div class="md:5/12 lg:w-1/2 hidden md:block">
+            <img src="{% static 'images/bgme.png' %}" alt="image" loading="lazy" width="" height="" class="w-full">
+          </div>
+          <div class="md:7/12 lg:w-1/2">
+            <h2 class="text-3xl font-bold md:text-4xl text-white">
+              Hello, I'm Jay. A freelance software engineer from Pob. Guipos Zamboanga del Sur
+            </h2>
+            <p class="my-8 text-gray-300">
+              A freelance software engineer and student who has redefined what it means to innovate. With over 100 web
+              applications under my belt, I've woven intricate solutions to modern challenges, demonstrating an
+              unwavering commitment to excellence.
+            </p>
+            <div class="divide-y space-y-4 divide-gray-800">
+              <div class="mt-8 flex gap-4 md:items-center">
+                <div class="w-12 h-12 flex gap-4 rounded-full bg-indigo-100 bg-indigo-900/20">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+                       class="w-6 h-6 m-auto text-indigo-400">
+                    <path fill-rule="evenodd"
+                          d="M4.848 2.771A49.144 49.144 0 0112 2.25c2.43 0 4.817.178 7.152.52 1.978.292 3.348 2.024 3.348 3.97v6.02c0 1.946-1.37 3.678-3.348 3.97a48.901 48.901 0 01-3.476.383.39.39 0 00-.297.17l-2.755 4.133a.75.75 0 01-1.248 0l-2.755-4.133a.39.39 0 00-.297-.17 48.9 48.9 0 01-3.476-.384c-1.978-.29-3.348-2.024-3.348-3.97V6.741c0-1.946 1.37-3.68 3.348-3.97zM6.75 8.25a.75.75 0 01.75-.75h9a.75.75 0 010 1.5h-9a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5H12a.75.75 0 000-1.5H7.5z"
+                          clip-rule="evenodd"></path>
+                  </svg>
+                </div>
+                <div class="w-5/6">
+                  <h4 class="font-semibold text-lg text-indigo-300">Chat Anytime</h4>
+                  <p class="text-gray-400">Need software assistance? Chat me up and I'll code-tally help you out!</p>
+                </div>
+              </div>
+              <div class="pt-4 flex gap-4 md:items-center">
+                <div class="w-12 h-12 flex gap-4 rounded-full bg-teal-100 bg-teal-900/20">
+                  <i class="fa-solid fa-user w-6 h-6 m-auto text-teal-400 text-2xl text-center"></i>
+
+                </div>
+                <div class="w-5/6">
+                  <h4 class="font-semibold text-lg text-teal-300">100% Human</h4>
+                  <p class="text-gray-400">Scammers may code chaos, but real humans program trust.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="text-gray-300">
+      <div class="max-w-7xl mx-auto px-2 md:px-12 xl:px-6">
+        <div class="mb-20 space-y-4 px-6 md:px-0">
+          <h2 class="text-center text-2xl font-bold text-white md:text-4xl">
+            Words from my Happy Clients.
+          </h2>
+        </div>
+        {% if count_comments == 0 %}
+
+        <div class="text-center text-white mb-36 mt-24 p-4 md:p-0">
+          <i class="fa-solid fa-face-sad-cry fa-bounce text-8xl mb-4"></i>
+          <p class="text-2xl font-bold">Awwww snap! No Comments found.</p>
+          <p class="text-white text-md">No one's here. Now ya'll think I'm lying about my skills.</p>
+        </div>
+
+        {% else %}
+        <div class="flex flex-row justify-between flex-wrap">
+          {% for client in comments %}
+          <div class="overflow-hidden max-w-sm mb-3 p-3 md:p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
+            <div class="flex flex-row items-center mb-6">
+              {% if client.profile_pic == '' %}
+              <img src="{% static 'images/logo.png' %}" width="50" class="mr-2" alt="">
+              {% else %}
+              <img src="{{client.profile_pic.url}}" width="60" class="mr-2 rounded-full h-[60px]" alt="">
+              {% endif %}
+              <div class="flex flex-col leading-normal">
+                <p class="text-lg font-semibold tracking-tight text-white">{{client.fname}}
+                </p>
+                <p class="text-sm font-bold text-primary">{{client.status}}</p>
+              </div>
+            </div>
+            <p class="whitespace-pre-line mb-3 font-normal text-gray-400">{{client.comment}}</p>
+          </div>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {% include 'includes/footer.html'%}
+
+  <script src="{% static 'js/reload.js' %}"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $("#like-button").click(function () {
+        $.ajax({
+          url: "{% url 'counter' %}",
+          success: function (data) {
+            $("#counter").text(data.count);
+          }
+        });
+      });
+    });
+  </script>
+
+
+
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

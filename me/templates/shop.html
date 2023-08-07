@@ -1,0 +1,249 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>JayForCode</title>
+	<link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bg1.css' %}">
+	<link rel="stylesheet" href="{% static 'css/emojis.css' %}">
+	<link rel="stylesheet" href="{% static 'css.modal.css' %}">
+	<link rel="stylesheet" href="{% static 'css/svgbg.css' %}" />
+	<link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css' %}">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+	<style>
+		.preserve-whitespace {
+			white-space: pre-line;
+		}
+	</style>
+</head>
+
+<body class="bg ">
+
+	{% include 'includes/header.html' %}
+	<br><br><br><br>
+	<div class="max-w-7xl mx-auto px-4 mb-16">
+		<div class="mb-12 space-y-2 text-center">
+			<h2 class="text-3xl font-bold md:text-4xl text-white">Merchandising</h2>
+			<div class="p-2 bg-indigo-800 items-center rounded-2xl text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex"
+				 role="alert">
+				<span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-sm font-bold mr-3">BETA</span>
+				<span class="font-semibold mr-2 text-left flex-auto text-xs md:text-[15px]">Where users turn into
+					superheroes, defeating bugs and glitches with their mighty feedback!</span>
+			</div>
+			<p class="lg:mx-auto lg:w-7/12 text-gray-300">
+
+				Looking for a capstone project? Discover innovation, find your perfect capstone system today! 🚀 <br>
+				<b class="text-blue-600">#CapstoneSystems #Innovation #Technology</b>
+			</p>
+		</div>
+	</div>
+
+	<div class="mx-1 md:mx-8">
+		<nav class="border-gray-200 px-4 lg:px-6 py-2.5 bg-gray-800 rounded-lg mb-8">
+			<div class="flex flex-wrap justify-between items-center">
+				<div class="flex justify-start items-center">
+
+					<form action="#" method="POST" class="flex flex-row items-center lg:pl-2">
+						{% csrf_token %}
+						<label for="topbar-search" class="sr-only">Search</label>
+						<div class="relative mt-1 w-48 md:w-96">
+							<div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+								<svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+									 xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd"
+										  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+										  clip-rule="evenodd"></path>
+								</svg>
+							</div>
+							<input type="text" name="email" id="searchInput"
+								   class="border sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 bg-gray-700 border-gray-600 placeholder-gray-400 text-white focus:ring-primary-500 focus:border-primary-500"
+								   placeholder="Search">
+						</div>
+
+						<button id="toggleSidebarMobileSearch" type="button"
+								class="ml-2 p-2 mt-[4px] rounded-lg block text-gray-400 hover:bg-gray-700 hover:text-white">
+							<span class="sr-only">Search</span>
+							<!-- Search icon -->
+							<svg aria-hidden="true" class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+								 xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd"
+									  d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+									  clip-rule="evenodd"></path>
+							</svg>
+						</button>
+					</form>
+				</div>
+				<div class="flex items-center lg:order-2">
+
+					<!-- Apps -->
+					<button type="button" data-dropdown-toggle="apps-dropdown"
+							class="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-gray-700 focus:ring-4">
+						<span class="sr-only">View notifications</span>
+						<!-- Icon -->
+						<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+							<path
+								  d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
+							</path>
+						</svg>
+					</button>
+					<!-- Dropdown menu -->
+					<div class="hidden overflow-hidden z-50 my-4 lg:max-w-sm text-base list-none rounded divide-y hadow-lg bg-gray-700 divide-gray-600"
+						 id="apps-dropdown">
+						<div class="block py-2 px-4 text-base font-medium text-center text-gray-400">
+							Browse by Categories
+						</div>
+						<div class="grid grid-cols-3 gap-4 p-4">
+							<a href="{% url 'free' %}" class="block p-4 text-center rounded-lg hover:bg-gray-600 group">
+								<i class="fa-solid fa-cart-shopping text-white text-3xl"></i>
+								<div class="text-sm text-white">Free</div>
+							</a>
+							<a href="{% url 'paid' %}" class="block p-4 text-center rounded-lg hover:bg-gray-600 group">
+								<i class="fa-brands fa-shopify text-white text-3xl"></i>
+								<div class="text-sm text-white">Paid</div>
+							</a>
+							<a href="{% url 'django' %}" class="block p-4 text-center rounded-lg hover:bg-gray-600 group">
+								<i class="fa-brands fa-python text-white text-3xl"></i>
+								<div class="text-sm text-white">Django</div>
+							</a>
+							<a href="{% url 'htmlcss' %}" class="block p-4 text-center rounded-lg hover:bg-gray-600 group">
+								<i class="fa-brands fa-css3-alt text-white text-3xl"></i>
+								<div class="text-xs text-white mt-[3px]">HTML + CSS</div>
+							</a>
+
+							<a href="{% url 'php' %}" class="block p-4 text-center rounded-lg hover:bg-gray-600 group">
+								<i class="fa-brands fa-php text-white text-3xl"></i>
+								<div class="text-sm text-white">PHP</div>
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</nav>
+	</div>
+
+
+
+
+
+	{% if count_products == 0 %}
+
+	<div class="text-center text-white mb-36 mt-36">
+		<i class="fa-solid fa-cart-shopping fa-beat-fade text-8xl"></i>
+		<p class="text-2xl font-bold mt-8">No items found. Dev must be on becation</p>
+		<p class="text-md ">Oops, my virtual shopping cart is feeling a bit lonely and abandoned right now – like a deserted island for products! 🛒🏝️</p>
+	</div>
+
+	{% elif count_products > 0 %}
+
+	<div class="flex flex-row flex-wrap p-3 justify-evenly">
+		{% for products in items %}
+		<div id="itemsContainer">
+			<div class="box relative w-full max-w-md lg:max-w-sm overflow-hidden rounded-lg bg-white shadow-md mb-6">
+				<a href="#">
+					<img class="h-60 rounded-t-lg object-cover" src="{% static 'images/myWorks/python/capstone.png' %}"
+						 draggable="false" alt="product image" />
+				</a>
+				<span
+					  class="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-green-600 text-center text-sm text-white">{{products.status}}</span>
+				<div class="mt-4 px-5 pb-5">
+					<a href="#">
+						<h5 class="text-xl font-semibold tracking-tight text-slate-900">{{products.pname}}</h5>
+						<p class="text-gray-600 text-sm mb-4">{{products.tag}}</p>
+					</a>
+					<div class="mt-2.5 mb-5 flex items-center">
+						<span class="mr-2 rounded py-0.5 text-xs font-semibold"><i class="fa fa-download"></i></span>
+						<span
+							  class="mr-2 rounded bg-gray-300 px-2.5 py-0.5 text-xs font-semibold">{{products.downloads}}</span>
+					</div>
+					<div class="flex items-center justify-between">
+						<p>
+							<span class="text-xl font-bold text-slate-900" id="pesoValue">{{products.price}}</span>
+							<span class="text-sm text-slate-900" id="usdValue"></span>
+						</p>
+						<button type="button" data-modal-target="view{{products.id}}"
+								data-modal-toggle="view{{products.id}}"
+								class="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
+							<i class="fa-solid fa-circle-info mr-2"></i> More details</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+
+	</div>
+	{% endif %}
+
+	<div id="noMatchText" class="text-center text-white mb-36 mt-12 p-4 md:p-0" style="display: none;">
+		<i class="fa-solid fa-face-sad-cry fa-bounce text-8xl"></i>
+		<p class="text-2xl font-bold">No matching items found.</p>
+		<p class="text-white text-md">I'm sorry that the thing you're looking for is not here and not created yet, maybe
+			I'm not that pro.</p>
+	</div>
+
+	{% for products in items %}
+	<div id="view{{products.id}}" tabindex="-1"
+		 class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+		<div class="relative w-full max-w-3xl max-h-full">
+			<!-- Modal content -->
+			<div class="relative rounded-lg shadow bg-gray-700">
+				<!-- Modal header -->
+				<div class="flex items-center justify-between p-5 border-b rounded-t border-gray-600">
+					<h3 class="text-xl font-medium text-white">
+						{{products.pname}}
+					</h3>
+					<button type="button"
+							class="text-gray-400 bg-transparent rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center hover:bg-gray-600 hover:text-white"
+							data-modal-hide="view{{products.id}}">
+						<svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+							 viewBox="0 0 14 14">
+							<path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+								  d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+						</svg>
+						<span class="sr-only">Close modal</span>
+					</button>
+				</div>
+				<!-- Modal body -->
+				<div class="p-6 space-y-6">
+					<p class="text-base text-left leading-relaxed text-gray-400 preserve-whitespace">
+						{{products.description}}
+					</p>
+
+				</div>
+				<!-- Modal footer -->
+				<div class="flex items-center p-6 space-x-2 border-t rounded-b border-gray-600">
+					<button type="button" data-tooltip-target="tooltip-default" 
+							class="text-white focus:ring-4 cursor-not-allowed focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-800">
+						Make Purchase</button>
+
+					<button data-modal-hide="view{{products.id}}" type="button"
+							class="focus:ring-4 focus:outline-none rounded-lg border text-sm font-medium px-5 py-2.5 focus:z-10 bg-gray-700 text-red-300 border-red-500 hover:text-white hover:bg-red-600 focus:ring-red-600">Close</button>
+
+
+					<div id="tooltip-default" role="tooltip"
+						 class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 rounded-lg shadow-sm opacity-0 tooltip bg-red-700">
+						Payment Method not yet available
+						<div class="tooltip-arrow" data-popper-arrow></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
+
+	{% include 'includes/footer.html' %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+	<script src="{% static 'js/script.js' %}"></script>
+	<script src="{% static 'js/converter.js' %}"></script>
+	<script src="{% static 'js/search.js' %}"></script>
+</body>
+
+</html>
